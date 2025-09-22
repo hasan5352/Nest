@@ -1,0 +1,35 @@
+
+main{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 0 2.5rem 0 2rem;
+}
+
+main .listing{
+    cursor: pointer;
+    padding: 0 .5rem 2rem .5rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    transition: box-shadow .2s;
+}
+main .listing:hover{
+    box-shadow: 1px 5px 10px rgba(0,0,0,0.15);
+}
+
+main .listing img{
+    height: 12rem;
+    width: 18rem;
+    border-radius: 1rem;
+}
+main .listing div{
+    padding: .5rem 0 0 .2rem;
+    line-height: 1.5rem;
+}
+main .listing .title{
+    font-size: .8rem;
+}
+main .listing .price{
+    font-size: .8rem;
+    opacity: .8;
+}
