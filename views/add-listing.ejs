@@ -27,21 +27,25 @@
                 <label for="price">Rental Price (&#8364; /night) <br>
                     <input name="price" id="price" type="number" min="0" placeholder="Give a Price...">
                 </label>
-                <label for="location">Location <br>
-                    <input name="location" id="location" type="text", placeholder="Add location...">
-                </label>
-                
+
                 <label for="country">Country Name <br>
-                    <% if (countryNames.length == 0) { %>
-                        <input name="country" id="country" type="text", placeholder="Add country name...">
-                    <% } else { %>
                     <select name="country" id="country">
                         <option value="" selected>Select Country...</option>
-                        <% for (let countryName of countryNames) { %>
-                            <option value=<%= countryName %>><%= countryName %></option>
-                        <% } %>
                     </select>
-                    <% } %>
+                </label>
+       
+                <label for="city"> City <br>
+                    <select name="city" id="city">
+                        <option value="" selected>Select City...</option>
+                    </select>
+                </label>
+
+                <label for="street">Street <br>
+                    <input name="street" id="street" type="text", placeholder="Enter Street...">
+                </label>
+       
+                <label for="house-num">House No. <br>
+                    <input name="house_num" id="house-num" type="number", placeholder="Enter House No. ..." min="0">
                 </label>
             </div>
 
@@ -54,7 +58,7 @@
                     <input name="img" id="img-url" type="text", placeholder="Paste  image URL...">
                 </label>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit">Add Listing</button>
         </form>
     </main>
 

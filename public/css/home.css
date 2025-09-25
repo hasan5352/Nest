@@ -22,14 +22,16 @@ main .listing img{
     width: 18rem;
     border-radius: 1rem;
 }
-main .listing div{
+main .listing .info-box{
     padding: .5rem 0 0 .2rem;
     line-height: 1.5rem;
 }
 main .listing .title{
     font-size: .8rem;
 }
-main .listing .price{
+.listing .info-box .info{
+    display: flex;
     font-size: .8rem;
+    justify-content: space-between;
     opacity: .8;
 }

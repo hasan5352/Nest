@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
+const fs = require("fs");
 const Listing = require("./models/listing");
-const { error, count } = require("console");
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -26,7 +26,7 @@ app.listen(PORT, ()=>{
 
 app.get("/listings", async (req, res)=>{
     try {
-        let listings = await Listing.find({}, 'title price img');
+        let listings = await Listing.find({}, 'title price img country address.city');
         res.render("home.ejs", { listings });
     } catch(err){
         console.log(err);
@@ -35,40 +35,24 @@ app.get("/listings", async (req, res)=>{
 });
 
 app.get("/listings/new", async (req, res)=>{
-    let countryNames = [];
-    try{ 
-        // get countries whose currency is EUR to display in form drop-down menu
-        let countries = await fetch("https://restcountries.com/v3.1/currency/EUR");
-        countries = await countries.json();
-        countryNames = countries.map((country)=>{
-            return country.name.common;
-        }).sort();
-        res.render("add-listing.ejs", { countryNames });
-    }catch (err){
-        console.log(err);
-        res.render("add-listing.ejs", { countryNames });
-    }
+    res.render("add-listing.ejs");
+});
+const COUNTRY_DATA_PATH = "./data/countryData.json"
+app.get("/api/countryData", (req,res)=>{
+    const raw = fs.readFileSync(COUNTRY_DATA_PATH);
+    const countryData = JSON.parse(raw);
+    res.send(countryData);
 });
 
 // ------------------------------------------ POST -----------------------------------------------
 app.post("/listings", async (req, res)=>{
     try{
+        req.body.address = { city: req.body.city, house_num: req.body.house_num, street: req.body.street }
         await Listing.insertOne(req.body);
         res.status(200).send("Listing saved in DB");
     } catch (err){
-        console.log(err);
-        if (err.name == "ValidationError" || err.code == 121) res.status(400).send("Title is required.");
+        if (err.name == "ValidationError" || err.code == 121) res.status(400).send(Object.keys(err.errors));
         else res.status(500).send("Internal DB error. Please try again in sometime.");
     }
 });
 
-app.post("/testListing", async (req, res)=>{
-    try{
-        await Listing.insertOne(req.body);
-        console.log(await Listing.find({}));
-        res.send("got the listing!");
-    } catch (err){
-        console.log(err);
-        res.status(500).send("Internal DB error. Try sending info again");
-    }
-})

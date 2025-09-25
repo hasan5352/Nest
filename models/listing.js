@@ -3,18 +3,23 @@
 const mongoose = require("mongoose");
 
 const listingSchema = new mongoose.Schema({
-    price: Number,
-    location: String,
+    price: { type: Number, required: true },
+    country: { type: String, required: true },
+    address: {
+        city: { type: String, required: true },
+        street: { type: String, required: true },
+        house_num: { type: Number, required: true },
+    },
     img: {
         type:String, 
         set(v){
-            let link = 'https://media.istockphoto.com/id/2228579645/photo/error-404-an-error-message-within-a-glass-frame-indicating-that-a-file-cannot-be-found-on-the.webp?a=1&b=1&s=612x612&w=0&k=20&c=NQQz7_eVhL_zkUi0juXyJDqXutfBF9Z8zYDnhkTyNlM=';
-            return (v === '')? link : v;
+            let fallback = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOt34TqkJaeLxGwu76Yqrdn6EzoyIb2Kdohw&s";
+            return (v === '')? fallback : v;
         }
     },
     title: {type:String, required:true},
-    description: String,
-    country: String
-});
+    description: String
+}, { strict: true });
+
 const Listing = mongoose.model("Listing", listingSchema);
 module.exports = Listing;
