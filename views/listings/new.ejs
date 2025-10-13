@@ -1,0 +1,102 @@
+
+<link rel="stylesheet" href="/css/new.css">
+<link rel="stylesheet" href="/css/utility.css">
+<%- layout("/layouts/boilerplate") %>
+<body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+        <h2>Add New Listing</h2>
+        <form action="">
+            <div>
+                <div>
+                    <label id="title-label" for="title"> Title <br>
+                        <input name="title" id="title" type="text", placeholder="Give a Title...">
+                    </label>
+                    <label id="price-label" for="price"> Price (&#8364; /night) <br>
+                        <input name="price" id="price" type="number" min="0" value="0">
+                    </label>
+                </div>
+
+                <div>
+                    <label for="rooms"> Rooms <br>
+                         <input name="rooms" id="rooms" type="number" min="0" max="25" value="0">
+                    </label>
+                    <label for="rooms"> Bathrooms <br>
+                         <input name="bathrooms" id="bathrooms" type="number" min="0" max="20" value="0">
+                    </label>
+                </div>
+
+                <div>
+                    <label for="description">Description <br>
+                        <textarea name="description" id="description" rows="3" placeholder="Give a Description..."></textarea>
+                    </label>
+                </div>
+            </div>
+            
+            <div>
+                <div>
+                    <label id="country-label" for="country">Country Name <br>
+                        <select name="country" id="country">
+                            <option value="" selected disabled>Select Country...</option>
+                        </select>
+                    </label>
+        
+                    <label id="city-label" for="city"> City <br>
+                        <select name="city" id="city">
+                            <option value="" selected disabled>Select City...</option>
+                        </select>
+                    </label>
+                </div>
+                <div>
+                    <label id="street-label" for="street">Street <br>
+                        <input name="street" id="street" type="text", placeholder="Enter Street...">
+                    </label>
+                    <label id="postal-label" for="postal-code">Postal Code <br>
+                        <input name="postal_code" id="postal-code" type="text", placeholder="Enter Postal Code...">
+                    </label>
+                    <label id="house-label" for="house-num">House No. <br>
+                        <input name="house_num" id="house-num" type="number", placeholder="Enter House No..." min="0">
+                    </label>
+                </div>
+            </div>
+
+            <div id="img-div">
+                <div id="img-display">
+                    <img src="" alt="Preview image">
+                </div>
+
+                <div>
+                    <div id="url-label-div">
+                        <label id="img-url-label" for="img-url">Image URL </label>
+                        <p class="display-none">Invalid URL!</p>    <!-- display-none in utility.css -->
+                    </div>
+                    
+                    <div id="add-url-div">
+                        <input name="img" id="img-url" type="text", placeholder="Paste Image URL...">
+                        <button type="button">Add</button>
+                    </div>
+
+                    <ol>
+                    </ol>
+                </div>
+            </div>
+
+            <div id="amenity-div">
+                <label for="amenity-inp"> Amenities </label>
+                
+                <div>
+                    <input placeholder="Add Amenity..." type="text" id="amenity-inp">
+                    <button type="button"> Add </button>
+                </div>
+                
+                <ul>
+                </ul>
+            </div>
+            
+            <button type="submit">Add Listing</button>
+        </form>
+    </main>
+
+
+    <script src="/js/new.js"></script>
+</body>

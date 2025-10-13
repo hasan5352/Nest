@@ -9,7 +9,12 @@ const listingSchema = new mongoose.Schema({
         city: { type: String, required: true },
         street: { type: String, required: true },
         house_num: { type: Number, required: true },
+        postal_code: { type: String, required: true },
     },
+    rooms: Number,
+    bathrooms: Number,
+    amenities: [String],
+    imgs: [String],
     img: {
         type:String, 
         set(v){

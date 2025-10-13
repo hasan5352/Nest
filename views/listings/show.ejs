@@ -1,0 +1,77 @@
+
+<%- layout("/layouts/boilerplate") %>
+<link rel="stylesheet" href="/css/show.css">
+<body>
+    <%- include("../partials/header") %>
+    <main>
+        <section class="img-section">
+            <h1><%= listing.title %></h1>
+            <div class="img-container">
+                <img src=<%= listing.img %> alt="">
+            </div>
+            <hr>
+        </section>
+        
+        <section class="info-section">
+            <article class="listing-info">
+                <div class="meta">
+                    <h2 id="location"> Stay in <%= listing.address.city %>, <%= listing.country %> </h2>
+                    <p>
+                        <% if (listing.rooms > 0){ %>
+                            <span> <%= listing.rooms %> Rooms </span> &middot;
+                        <% } %>
+                        <% if (listing.bathrooms > 0){ %>
+                            <span> <%= listing.bathrooms %> Bathrooms </span>;
+                        <% } %>
+                    </p>
+                </div>
+             
+                <div class="description">
+                    <h3>About this place</h3>
+                    <p><%= listing.description %></p>
+                </div>
+             
+                <div>
+                    <h3>What this place offers</h3>
+                    <ul>
+                        <% for (let amenity of listing.amenities){ %>
+                            <li> <%= amenity %> </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </article>
+
+            <section class="booking-section">
+                <form action="">
+                    <p id="price"> &#8364; <%= listing.price %> /night</p>
+                    <div class="reservation-container">
+                        <div>
+                            <input type="date" name="check-in" id="check-in">
+                            <input type="date" name="check-out" id="check-out">
+                        </div>
+                        <select name="guests" id="guests">
+                            <option value="" selected>Select Guests...</option>
+                        </select>
+                    </div>
+                    <button type="submit">Book</button>
+                    <div class="cost-container">
+                        <div>
+                            <p>3 nights x &#8364; <%= listing.price %></p>
+                            <p>&#8364; 123</p>
+                        </div>
+                        <div>
+                            <p>Nest Service Fee</p>
+                            <p>&#8364; 25.6</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <p>Total</p>
+                            <p>&#8364; 207</p>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </section>
+        <hr>
+    </main>
+</body>

@@ -29,3 +29,23 @@ header .right{
     gap: 1.8rem;
 }
 header .right *{cursor: pointer;}
+
+header button{
+    border-radius: 1rem;
+    font-weight: bold;
+    padding: .4rem .7rem;
+    border: 1px solid navy;
+    transition: color .2s, background-color .2s;
+}
+#signup-btn {
+    background-color: navy;
+    color: white;
+}
+#login-btn{
+    background-color: white;
+    color: navy;
+    padding-right: .9rem;
+    padding-left: .9rem;
+}
+#signup-btn:hover { background-color: white; color: navy; }
+#login-btn:hover { background-color: navy; color: white; }
