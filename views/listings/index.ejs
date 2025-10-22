@@ -18,7 +18,11 @@
         <% for (let listing of listings) { %>
             <a href="http://localhost:8080/listings/<%= listing._id %>">
                 <div class="listing">
-                    <img src=<%= listing.img %>>
+                    <% if (listing.imgs) { %>
+                        <img src=<%= listing.imgs[0] %>>
+                    <% } else { %>
+                        <img src=<%= listing.img %>>
+                    <% } %>
                     <div class="info-box">
                         <p id="title"><%= listing.title %></p>
                         

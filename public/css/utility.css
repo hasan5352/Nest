@@ -2,3 +2,5 @@
 .display-none{display: none;}
 
 .scale-09{ transform: scale(.9); }
+
+.red-border { border-color: red; }

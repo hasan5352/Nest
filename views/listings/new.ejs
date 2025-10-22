@@ -6,87 +6,110 @@
     <%- include('../partials/header.ejs') %>
     <main>
         <h2>Add New Listing</h2>
-        <form action="">
-            <div>
-                <div>
-                    <label id="title-label" for="title"> Title <br>
-                        <input name="title" id="title" type="text", placeholder="Give a Title...">
-                    </label>
-                    <label id="price-label" for="price"> Price (&#8364; /night) <br>
-                        <input name="price" id="price" type="number" min="0" value="0">
-                    </label>
+        <form action="" novalidate>
+            <div class="container">
+                <div class="field" id="title">
+                    <label for="title"> Title </label>
+                    <input required name="title" id="title" type="text", placeholder="Give a Title...">
+                    <small> Provide a valid title. </small>
                 </div>
-
-                <div>
-                    <label for="rooms"> Rooms <br>
-                         <input name="rooms" id="rooms" type="number" min="0" max="25" value="0">
-                    </label>
-                    <label for="rooms"> Bathrooms <br>
-                         <input name="bathrooms" id="bathrooms" type="number" min="0" max="20" value="0">
-                    </label>
-                </div>
-
-                <div>
-                    <label for="description">Description <br>
-                        <textarea name="description" id="description" rows="3" placeholder="Give a Description..."></textarea>
-                    </label>
-                </div>
-            </div>
-            
-            <div>
-                <div>
-                    <label id="country-label" for="country">Country Name <br>
-                        <select name="country" id="country">
-                            <option value="" selected disabled>Select Country...</option>
-                        </select>
-                    </label>
-        
-                    <label id="city-label" for="city"> City <br>
-                        <select name="city" id="city">
-                            <option value="" selected disabled>Select City...</option>
-                        </select>
-                    </label>
-                </div>
-                <div>
-                    <label id="street-label" for="street">Street <br>
-                        <input name="street" id="street" type="text", placeholder="Enter Street...">
-                    </label>
-                    <label id="postal-label" for="postal-code">Postal Code <br>
-                        <input name="postal_code" id="postal-code" type="text", placeholder="Enter Postal Code...">
-                    </label>
-                    <label id="house-label" for="house-num">House No. <br>
-                        <input name="house_num" id="house-num" type="number", placeholder="Enter House No..." min="0">
-                    </label>
+                
+                <div class="field" id="price">
+                    <label for="price"> Price (&#8364; /night) </label>
+                    <input required name="price" id="price" type="number" min="5" max="10000" value="5">
+                    <small> Provide a price between 5 - 10k &#8364;.</small>
                 </div>
             </div>
 
-            <div id="img-div">
+            <div class="container">
+                <div class="field">
+                    <label for="rooms"> Rooms </label>
+                    <input required name="rooms" id="rooms" type="number" min="1" max="15" value="1">
+                    <small> Provide no. of rooms between 1 - 15. </small>
+                </div>
+                
+                <div class="field">
+                    <label for="rooms"> Bathrooms </label>
+                    <input required name="bathrooms" id="bathrooms" type="number" min="1" max="15" value="1">
+                    <small> Provide no. of bathrooms between 1 - 15. </small>
+                </div>
+            </div>
+                
+            <div class="container">
+                <div class="field">
+                    <label for="description">Description </label>
+                    <textarea name="description" id="description" rows="3" placeholder="Give a Description..."></textarea>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="field">
+                    <label for="country">Country Name </label>
+                    <select required name="country" id="country">
+                        <option value="" selected disabled>Select Country...</option>
+                    </select>
+                    <small> Provide a valid country. </small>
+                </div>
+
+                <div class="field">
+                    <label for="city"> City </label>
+                    <select required name="city" id="city">
+                        <option value="" selected disabled>Select City...</option>
+                    </select>
+                    <small> Provide a valid city. </small>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="field">
+                    <label id="street-label" for="street">Street </label>
+                    <input required name="street" id="street" type="text", placeholder="Enter Street...">
+                    <small> Provide a valid street. </small>
+                </div>
+                
+                <div class="field">
+                    <label id="postal-label" for="postal-code">Postal Code </label>
+                    <input required name="postal_code" id="postal-code" type="text", placeholder="Enter Postal Code...">
+                    <small> Provide a valid code. </small>
+                </div>
+
+                <div class="field">
+                    <label id="house-label" for="house-num">House No. </label>
+                    <input required name="house_num" id="house-num" type="number", placeholder="Enter House No..." min="0">
+                    <small> Provide a valid house no.. </small>
+                </div>
+            </div>
+
+            <div class="container" id="img-div">
                 <div id="img-display">
                     <img src="" alt="Preview image">
                 </div>
 
                 <div>
-                    <div id="url-label-div">
-                        <label id="img-url-label" for="img-url">Image URL </label>
-                        <p class="display-none">Invalid URL!</p>    <!-- display-none in utility.css -->
+                    <div class="field">
+                        <div>
+                            <label id="img-url-label" for="img-url">Image URL </label>
+                            <small>Invalid URL!</small>
+                        </div>
+                        
+                        <div>
+                            <input id="img-url" type="text", placeholder="Paste Image URL...">
+                            <button type="button">Add</button>
+                        </div>    
                     </div>
                     
-                    <div id="add-url-div">
-                        <input name="img" id="img-url" type="text", placeholder="Paste Image URL...">
-                        <button type="button">Add</button>
-                    </div>
-
                     <ol>
                     </ol>
                 </div>
             </div>
 
             <div id="amenity-div">
-                <label for="amenity-inp"> Amenities </label>
-                
-                <div>
-                    <input placeholder="Add Amenity..." type="text" id="amenity-inp">
-                    <button type="button"> Add </button>
+                <div class="field">
+                    <label for="amenity-inp"> Amenities </label>
+                    <div>
+                        <input placeholder="Add Amenity..." type="text" id="amenity-inp">
+                        <button type="button"> Add </button>
+                    </div>
                 </div>
                 
                 <ul>

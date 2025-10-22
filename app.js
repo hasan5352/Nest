@@ -95,10 +95,14 @@ app.delete("/listings/:id", async (req, res)=>{
     }
 });
 
+
 // ------------------------------------------ FRONT-END DATA SENDING ROUTES ------------------------------------------
 const COUNTRY_DATA_PATH = "./data/countryData.json";
-app.get("/api/countryData", (req,res)=>{                // countries data
-    const raw = fs.readFileSync(COUNTRY_DATA_PATH);
-    const countryData = JSON.parse(raw);
-    res.send(countryData);
+app.get("/api/countryData", async (req,res)=>{                // countries data
+    fs.readFile(COUNTRY_DATA_PATH, 'utf8',(err, data) => {
+        if (err) res.status(500).send("Internal Server Error");
+        res.send(data);
+    });
 });
+
+// ------------------------------------------ Error Handling ------------------------------------------
