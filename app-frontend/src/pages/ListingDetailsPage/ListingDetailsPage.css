@@ -1,0 +1,16 @@
+#listing-details-page{
+    max-width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#listing-details-page .info-section{
+    display: flex;
+    justify-content: space-between;
+}
+
+#listing-details-page h2, #listing-details-page h3, #listing-details-page h1{ color: navy; }
+#listing-details-page section { width: 100%; }
+

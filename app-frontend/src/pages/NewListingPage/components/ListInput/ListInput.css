@@ -1,0 +1,54 @@
+
+#new-listing-page .list-div > div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+#new-listing-page ol{
+    font-size: .8rem;
+    overflow-y: auto;
+    color: #524f4f;
+    border: 1px solid #b9b9b9;
+    border-radius: .5rem;
+    padding: .5rem .5rem .5rem .5rem;
+    margin-top: .6rem;
+}
+#new-listing-page li > div { 
+    display: flex;
+    justify-content: space-between;
+    gap: .3rem;
+}
+
+#new-listing-page ol img{ height: 1.2rem; }
+#new-listing-page ol img:active { transform: scale(.8); }
+
+#new-listing-page #imgs-div ol{ height: 6.5rem; padding-left: 1.5rem; }
+#new-listing-page #imgs-div li{ margin-bottom: .3rem }
+
+#new-listing-page #imgs-div li p{
+    width: 100%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#new-listing-page ol::-webkit-scrollbar { width: .5rem; overflow: hidden; }
+#new-listing-page ol::-webkit-scrollbar-track { background: #ddd; border-radius: .5rem; }
+#new-listing-page ol::-webkit-scrollbar-thumb { background: #b9b9b9; border-radius: 3px; }
+
+
+#new-listing-page #amenities-div ol{
+    height: 5rem;
+    gap: 1rem;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+#new-listing-page #amenities-div ol li{
+    border: 1px solid #524f4f;
+    border-radius: .5rem;
+    padding: .13rem .5rem;
+    align-self: baseline;
+}

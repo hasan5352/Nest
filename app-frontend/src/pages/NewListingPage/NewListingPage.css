@@ -1,0 +1,8 @@
+#new-listing-page{
+    max-width: 50%;
+    margin: auto;
+}
+#new-listing-page h2{
+    padding-bottom: 1rem;
+    color: navy;
+}

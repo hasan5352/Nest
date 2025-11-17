@@ -1,0 +1,14 @@
+#listing-details-page .img-section{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+#listing-details-page .img-container{
+    border-radius: 1rem;
+    overflow: hidden;
+    max-height: 20rem;
+}
+#listing-details-page .img-container img{
+    width: 40%;
+    height: 100%;
+}

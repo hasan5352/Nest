@@ -1,0 +1,73 @@
+header{
+	display: flex;
+	z-index: 1000;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 2.5rem;
+	border-bottom: 1px solid #dddddd;
+	padding: 1.3rem 2.5rem .5rem 1.5rem;
+	align-items: center;
+	background-color: white;
+}
+header .left{
+	display: flex;
+	gap: 1.5rem;
+	align-items: center;
+	height: 2.5rem;
+}
+header .left *{cursor: pointer;}
+header .left img{ height: 2.5rem; }
+
+
+header .middle{
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+#searchbar{
+	padding: .3rem;
+	border-radius: 1rem;
+	width: 60%;
+	padding: .55rem .8rem;
+	border: 1px solid black;
+}
+#searchbtn img{ height: 1.4rem; }
+#searchbtn{
+	background-color: white;
+	border: .12rem solid black;
+	padding: .35rem .5rem;
+	border-radius: 2rem;
+}
+
+
+header .right{
+	display: flex;
+	align-items: center;
+	gap: 1.8rem;
+}
+header .right *{cursor: pointer;}
+
+header button{
+	border-radius: 1rem;
+	font-weight: bold;
+	padding: .4rem .7rem;
+	border: 1px solid navy;
+	transition: color .2s, background-color .2s;
+}
+#signup-btn {
+	background-color: navy;
+	color: white;
+}
+#login-btn{
+	background-color: white;
+	color: navy;
+	padding-right: .9rem;
+	padding-left: .9rem;
+}
+#signup-btn:hover { background-color: white; color: navy; }
+#login-btn:hover { background-color: navy; color: white; }

@@ -1,0 +1,56 @@
+#new-listing-page form{
+    flex-direction: column;
+    display: flex;
+    gap: .7rem;
+}
+#new-listing-page form .container{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+#new-listing-page .field {
+    display: block;
+    width: 100%;
+}
+#new-listing-page small { color: red; }
+#new-listing-page label {color: navy;}
+
+#new-listing-page input, #new-listing-page textarea{
+    box-sizing: border-box;
+    border-radius: .5rem;
+    padding: .3rem .5rem .3rem .8rem;
+    border: 1px solid #524f4f;
+    background-color: white;
+    width: 100%;
+}
+
+#new-listing-page input:focus,
+#new-listing-page textarea:focus {outline: none;}
+
+#new-listing-page #img-div{ margin-top: .6rem; }
+#new-listing-page #img-div > div:nth-child(2) { width: 60%; display: block; }   /* right side container of img-div */
+#new-listing-page #img-display{
+    background-color: white;
+    overflow: hidden;
+    height: 11.5rem;
+    border-radius: 1rem;
+    width: 40%;
+    text-align: center;
+    border: 1px solid #b9b9b9;
+    color: red;
+}
+#new-listing-page #img-display img{
+    width: 100%;
+    height: 100%;
+}
+
+
+#new-listing-page form button{
+    align-self: baseline;
+    padding: .4rem .8rem;
+    color: white;
+    background-color: navy;
+    border: none;
+    border-radius: .5rem;
+    font-weight: bold;
+}

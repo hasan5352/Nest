@@ -1,0 +1,9 @@
+#listing-details-page article{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#listing-details-page article p, #listing-details-page article li{ font-size: .9rem; }
+#listing-details-page article ul{ list-style: none; }
+#listing-details-page article li::marker{ content: ""; }

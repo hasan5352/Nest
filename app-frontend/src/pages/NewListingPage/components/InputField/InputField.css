@@ -1,0 +1,7 @@
+
+#new-listing-page #title{ width: 70%; }
+#new-listing-page #price { width: 30%; }
+#new-listing-page #title input { width: 100%;}
+#new-listing-page #price input { width: 100%;}
+
+#new-listing-page #description textarea{ height: 4rem;}

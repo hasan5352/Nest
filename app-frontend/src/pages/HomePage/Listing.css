@@ -1,0 +1,41 @@
+#homepage .listing{
+    cursor: pointer;
+    padding-bottom: 2rem;
+    border-radius: .5rem;
+    transition: box-shadow .2s, opacity .1s, background-color .1s;
+    width: 19rem;
+}
+#homepage .listing:hover{ box-shadow: 1px 5px 10px rgba(0,0,0,0.2); }
+#homepage .listing:active{ background-color: rgba(0, 0, 0, .1); opacity: .9;}
+
+#homepage .listing img{
+    height: 12rem;
+    width: 100%;
+    border-radius: 1rem;
+}
+#homepage .listing .info-box{
+    padding: .5rem 0 0 .2rem;
+    line-height: 1.5rem;
+    font-size: .8rem;
+    padding-right: .7rem;
+    padding-left: .7rem;
+}
+#homepage .listing #title{
+    display: block;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .9rem;
+}
+#homepage .listing .info-box .info{
+    display: flex;
+    justify-content: space-between;
+    opacity: .8;
+}
+#homepage .listing #location{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#homepage .listing #price{ width: 50%; }

@@ -1,6 +1,5 @@
 "use strict";
-
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const listingSchema = new mongoose.Schema({
     price: { type: Number, required: true },
@@ -8,8 +7,8 @@ const listingSchema = new mongoose.Schema({
     address: {
         city: { type: String, required: true },
         street: { type: String, required: true },
-        house_num: { type: Number, required: true },
-        postal_code: { type: String, required: true },
+        houseNum: { type: Number, required: true },
+        postalCode: { type: String, required: true },
     },
     rooms: Number,
     bathrooms: Number,
@@ -27,4 +26,4 @@ const listingSchema = new mongoose.Schema({
 }, { strict: true });
 
 const Listing = mongoose.model("Listing", listingSchema);
-module.exports = Listing;
+export default Listing;

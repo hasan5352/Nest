@@ -1,7 +1,7 @@
 "use strict";
-const mongoose = require("mongoose");
-const Listing = require("../models/listing.js");
-const { sampleListings } = require("../data/data.js");
+import mongoose from "mongoose";
+import Listing from "../models/listing.js";
+import { sampleListings } from "../initData/listingsData.js";
 
 const MONGO_URL = 'mongodb://127.0.0.1:27017/nest';
 async function main(url) {
