@@ -25,7 +25,13 @@ function ListingDetailsPage() {
       <Header />
       
       <main id='listing-details-page'>
+        <h1>{listing.title}</h1>
+        
+        {listing.imgs &&
         <ImgSection listing={listing} />
+        }
+        
+        <hr />
 
         <section className="info-section">
           <ListingInfoSection listing={listing} />

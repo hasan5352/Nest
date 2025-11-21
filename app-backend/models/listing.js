@@ -2,16 +2,16 @@
 import mongoose from "mongoose";
 
 const listingSchema = new mongoose.Schema({
-    price: { type: Number, required: true },
-    country: { type: String, required: true },
     address: {
+        country: { type: String, required: true },
         city: { type: String, required: true },
         street: { type: String, required: true },
-        houseNum: { type: Number, required: true },
+        houseNum: { type: String, required: true },
         postalCode: { type: String, required: true },
     },
-    rooms: Number,
-    bathrooms: Number,
+    price: { type: Number, required: true, min: 5, max: 10000 },
+    rooms: { type: Number, required: true, min: 1, max: 15 },
+    bathrooms: { type: Number, required: true, min: 1, max: 15 },
     amenities: [String],
     imgs: [String],
     img: {

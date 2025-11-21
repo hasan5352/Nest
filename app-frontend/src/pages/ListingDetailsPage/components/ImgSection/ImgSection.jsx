@@ -1,14 +1,24 @@
 import './ImgSection.css';
 
 function ImgSection({ listing }) {
+  console.log(listing);
   return (
-    <section className="img-section">
-        <h1>{listing.title}</h1>
-        <div className="img-container">
-            <img src={listing.img} alt="unavailable" />
-        </div>
-        <hr />
-    </section>
+  <section className="img-section">
+      <div className='img-holder'> 
+        <img src={listing.imgs[0]} alt="" /> 
+      </div>
+      
+      <div className='img-holder'>
+        <img src={listing.imgs[1]} alt="" />
+        <img src={listing.imgs[2]} alt="" />
+      </div>
+
+      <div className='img-holder'>
+        <img src={listing.imgs[3]} alt="" />
+        <img src={listing.imgs[4]} alt="" />
+      </div>
+
+  </section>
   );
 }
 

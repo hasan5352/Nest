@@ -1,9 +1,19 @@
-#listing-details-page article{
+#listing-details-page .listing-info{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    border: red 1px solid;
+    max-width: 70%;
 }
 
-#listing-details-page article p, #listing-details-page article li{ font-size: .9rem; }
-#listing-details-page article ul{ list-style: none; }
-#listing-details-page article li::marker{ content: ""; }
+#listing-details-page .listing-info p, 
+#listing-details-page .listing-info li{ font-size: 1rem; }
+
+#listing-details-page .listing-info ul{ list-style: none; }
+#listing-details-page .listing-info li::marker{ content: ""; }
+
+#listing-details-page .listing-info .description p{
+    margin-top: .8rem;
+    line-height: 1.5rem;
+
+}

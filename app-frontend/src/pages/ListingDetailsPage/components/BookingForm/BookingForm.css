@@ -1,6 +1,6 @@
 #listing-details-page .booking-section{
     position: relative;
-    width: 50%;
+    min-width: 35%;
 }
 #listing-details-page .booking-section form{
     border: 1px grey solid;

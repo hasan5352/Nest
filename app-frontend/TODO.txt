@@ -1,3 +1,5 @@
 
 - make a confirm component for form
+- limit input lengths -- on backend as well
+- init db with changed data where country is inside address
 - Fix ShowListing page

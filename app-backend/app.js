@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import listingRoutes from './routes/listings.js';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 app.use(express.urlencoded( {extended: true} ));
@@ -15,21 +18,20 @@ app.use("/api/listings", listingRoutes);
 
 // -------------------------------- Setup connection -----------------------------------------
 
-const MONGO_URL = 'mongodb://127.0.0.1:27017/nest';
-const PORT = 8080;
+
 async function main(url) {
-    try{
-        await mongoose.connect(url);
-        console.log("Database connected")
-    } catch (err){
-        console.log(err)
-    }
+	try{
+		await mongoose.connect(url);
+		console.log("Database connected")
+	} catch (err){
+		console.log(err)
+	}
 }
 
-main(MONGO_URL)
+main(process.env.MONGO_URL)
 
-app.listen(PORT, ()=>{
-    console.log(`Server listening at port ${PORT}`);
+app.listen(process.env.PORT, ()=>{
+    console.log(`Server listening at port ${process.env.PORT}`);
 });
 
 

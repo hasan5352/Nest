@@ -64,10 +64,7 @@ function NewListingForm() {
     if (!isValidateForm()) return;
 
     const formData = {...notRequiredData, ...requiredData};
-    formData.price = Number(formData.price); formData.rooms = Number(formData.rooms); 
-    formData.bathrooms = Number(formData.bathrooms);
-
-    console.log(formData);
+    
     postDataToBackend(formData, FORM_SUBMISSION_URL);
   }
 
